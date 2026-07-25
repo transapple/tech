@@ -9,7 +9,7 @@
 <meta name="author" content="TransApple Technologies">
 <link rel="icon" type="image/png" href="https://i.postimg.cc/HxmQ33wF/20260724-163134.png">
 <link rel="apple-touch-icon" href="https://i.postimg.cc/HxmQ33wF/20260724-163134.png">
-<meta name="theme-color" content="#0B1220">
+<meta name="theme-color" content="#F4F7FB">
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="TransApple Technologies · Smart Solutions for Modern Schools">
@@ -37,7 +37,7 @@
     "addressCountry": "UG"
   },
   "telephone": "+256788737517",
-  "email": "hello@transappletechnologies.com",
+  "email": "transappletech@gmail.com",
   "sameAs": [
     "https://facebook.com/transappletechnologies"
   ]
@@ -64,13 +64,34 @@
     --shadow-soft: rgba(0,0,0,0.55);
     color-scheme: dark;
   }
+  body.light-mode{
+    --bg: #F4F7FB;
+    --bg-soft: #EAF0F8;
+    --panel: #FFFFFF;
+    --panel-2: #EEF3FA;
+    --border: #DCE4F0;
+    --text: #16203A;
+    --muted: #5C6B8A;
+    --muted-2: #8A97B3;
+    --accent: #0E9E90;
+    --accent-dim: rgba(14,158,144,0.10);
+    --accent-2: #4C6FEF;
+    --accent-2-dim: rgba(76,111,239,0.10);
+    --amber: #B8791E;
+    --shadow-soft: rgba(20,30,50,0.10);
+    color-scheme: light;
+  }
+  body.light-mode{ transition:background .25s ease, color .25s ease; }
+  body.light-mode .btn-primary{ color:#fff; }
+  body.light-mode .price-card.featured::before{ color:#fff; }
   *{ margin:0; padding:0; box-sizing:border-box; }
-  html{ scroll-behavior:smooth; scroll-padding-top:112px; }
+  html{ scroll-behavior:smooth; scroll-padding-top:112px; overflow-x:hidden; width:100%; }
   body{
     background: var(--bg); color: var(--text);
     font-family:'Inter', sans-serif; line-height:1.55;
-    -webkit-font-smoothing:antialiased; overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
     padding-top:112px;
+    width:100%;
   }
   body::before{
     content:""; position:fixed; inset:0;
@@ -92,18 +113,19 @@
   .brand{ display:flex; align-items:center; gap:11px; min-width:0; }
   .brand-mark{ width:34px; height:34px; flex-shrink:0; }
   .brand-text{ display:flex; flex-direction:column; line-height:1.1; min-width:0; }
-  .brand-text .name{ font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:15.5px; color:var(--text); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .brand-text .name{ font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:15.5px; color:#FFFFFF; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
   .nav-sub{ display:flex; align-items:center; justify-content:space-between; gap:12px; max-width:1180px; margin:0 auto; padding:2px 32px 14px; flex-wrap:wrap; overflow-x:hidden; }
-  .nav-sub .tag{ font-size:10.5px; color:var(--muted-2); letter-spacing:0.04em; text-transform:uppercase; }
-  .nav-links{ display:flex; align-items:center; gap:26px; flex-wrap:wrap; min-width:0; }
+  .nav-sub .tag{ font-size:9px; padding:3px 8px; color:var(--muted-2); letter-spacing:0.04em; text-transform:uppercase; }
+  .nav-links{ display:flex; align-items:center; justify-content:center; gap:26px; flex-wrap:wrap; min-width:0; max-width:1180px; margin:0 auto; padding:2px 32px 12px; border-top:1px solid var(--border); }
   .nav-links a{ font-size:13.5px; color:var(--muted); font-weight:500; transition:color .15s ease; }
   .nav-links a:hover{ color:var(--text); }
-  .nav-cta{ padding:9px 18px; border-radius:8px; background:var(--accent-dim); color:var(--accent); border:1px solid rgba(79,209,197,0.28); font-size:13.5px; font-weight:600; transition:background .15s ease, transform .15s ease; white-space:nowrap; flex-shrink:0; }
+  .nav-cta{ padding:6px 13px; border-radius:7px; background:var(--accent-dim); color:var(--accent); border:1px solid rgba(79,209,197,0.28); font-size:12px; font-weight:600; transition:background .15s ease, transform .15s ease; white-space:nowrap; flex-shrink:0; }
   .nav-cta:hover{ background:rgba(79,209,197,0.22); transform:translateY(-1px); }
 
   /* ---------- HERO ---------- */
   .hero{ padding:88px 0 40px; }
-  .hero-grid{ display:grid; grid-template-columns:1.05fr 0.95fr; gap:56px; align-items:center; }
+  .hero{ overflow-x:hidden; max-width:100%; }
+  .hero-grid{ display:grid; grid-template-columns:1.05fr 0.95fr; gap:56px; align-items:center; max-width:100%; }
   .eyebrow{ display:inline-flex; align-items:center; gap:8px; font-size:12px; color:var(--accent); font-weight:600; letter-spacing:0.04em; text-transform:uppercase; background:var(--accent-dim); border:1px solid rgba(79,209,197,0.25); padding:6px 12px; border-radius:100px; margin-bottom:22px; }
   .eyebrow .dot{ width:6px; height:6px; border-radius:50%; background:var(--accent); animation:pulse-dot 2s ease-in-out infinite; }
   @keyframes pulse-dot{ 0%,100%{ opacity:1; } 50%{ opacity:.35; } }
@@ -116,7 +138,7 @@
   .btn-ghost{ border:1px solid var(--border); color:var(--text); font-weight:600; font-size:14.5px; padding:13px 24px; border-radius:9px; transition:border-color .15s ease, background .15s ease; display:inline-block; }
   .btn-ghost:hover{ border-color:var(--muted-2); background:var(--panel-2); }
 
-  .hero-visual{ position:relative; height:420px; perspective:1400px; }
+  .hero-visual{ position:relative; height:420px; perspective:1400px; overflow-x:hidden; max-width:100%; }
   .stack-card{ position:absolute; width:300px; border-radius:14px; background:var(--panel); border:1px solid var(--border); box-shadow:0 30px 60px -20px rgba(0,0,0,0.55); padding:14px; transform-style:preserve-3d; }
   .stack-card.c1{ top:10px; left:10px; transform:rotate3d(1,-1,0,8deg) rotateZ(-4deg); z-index:1; opacity:.75; }
   .stack-card.c2{ top:70px; left:90px; transform:rotate3d(1,-1,0,6deg) rotateZ(-2deg); z-index:2; }
@@ -139,9 +161,29 @@
   .pulse-item b{ color:var(--text); font-weight:600; }
   @media (prefers-reduced-motion: reduce){ .pulse-track{ animation:none; } .eyebrow .dot{ animation:none; } }
 
-  /* ---------- SECTION SHARED ---------- */
-  section{ padding:96px 0; position:relative; }
-  .section-head{ max-width:640px; margin-bottom:56px; }
+  /* ---------- GALLERY ---------- */
+  .gallery-grid{ display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:180px; gap:16px; }
+  .gallery-item{ position:relative; grid-column:span 1; grid-row:span 1; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:var(--panel); cursor:pointer; }
+  .gallery-item.big{ grid-column:span 2; grid-row:span 2; }
+  .gallery-item img{ width:100%; height:100%; object-fit:cover; display:block; transition:transform .5s ease; }
+  .gallery-item:hover img{ transform:scale(1.08); }
+  .gallery-item::after{ content:""; position:absolute; inset:0; background:linear-gradient(to top, rgba(6,10,18,0.85) 0%, rgba(6,10,18,0.05) 45%, transparent 70%); opacity:0; transition:opacity .3s ease; }
+  .gallery-item:hover::after{ opacity:1; }
+  .gallery-cap{ position:absolute; left:14px; right:14px; bottom:12px; opacity:0; transform:translateY(8px); transition:opacity .3s ease, transform .3s ease; z-index:1; }
+  .gallery-item:hover .gallery-cap{ opacity:1; transform:translateY(0); }
+  .gallery-cap .g-title{ font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:14px; color:#fff; }
+  .gallery-cap .g-sub{ font-size:11.5px; color:rgba(255,255,255,0.75); margin-top:2px; }
+  @media (max-width: 900px){
+    .gallery-grid{ grid-template-columns:repeat(2,1fr); grid-auto-rows:150px; }
+    .gallery-item.big{ grid-column:span 2; grid-row:span 1; }
+  }
+  @media (max-width: 560px){
+    .gallery-grid{ grid-template-columns:repeat(2,1fr); grid-auto-rows:120px; gap:10px; }
+  }
+
+
+  section{ padding:64px 0; position:relative; }
+  .section-head{ max-width:640px; margin-bottom:36px; }
   .section-head.center{ margin-left:auto; margin-right:auto; text-align:center; }
   .section-head .eyebrow{ margin-bottom:16px; }
   .section-head h2{ font-size:clamp(26px,3vw,36px); font-weight:700; color:var(--text); }
@@ -200,7 +242,8 @@
   .coming-soon-label{ font-size:12px; color:var(--muted-2); text-transform:uppercase; letter-spacing:0.05em; margin:36px 0 18px; }
 
   /* ---------- PRICING ---------- */
-  .price-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; align-items:stretch; }
+  .price-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; align-items:stretch; max-width:100%; }
+  #pricing{ overflow-x:hidden; max-width:100%; }
   .price-card{ background:var(--panel); border:1px solid var(--border); border-radius:16px; padding:30px; display:flex; flex-direction:column; }
   .price-card.featured{ border-color:rgba(79,209,197,0.4); background:linear-gradient(135deg, var(--panel), var(--panel-2)); position:relative; }
   .price-card.featured::before{ content:"Most Popular"; position:absolute; top:-12px; left:50%; transform:translateX(-50%); background:var(--accent); color:#06231F; font-size:11px; font-weight:700; padding:4px 14px; border-radius:100px; white-space:nowrap; }
@@ -269,7 +312,110 @@
             mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.7.8-.8.9-.1.2-.3.2-.6.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5.1-.1.2-.3.4-.4.1-.1.2-.3.2-.4.1-.2 0-.3 0-.5s-.6-1.5-.8-2c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-1 1-1 2.4s1 2.8 1.1 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z'/></svg>") center/contain no-repeat;
   }
 
-  /* ---------- SCROLL REVEAL ---------- */
+  /* ---------- ONBOARDING TIMELINE ---------- */
+  .timeline{ display:grid; grid-template-columns:repeat(4,1fr); gap:24px; position:relative; }
+  .timeline::before{ content:""; position:absolute; top:23px; left:calc(12.5% + 4px); right:calc(12.5% + 4px); height:1px; background:linear-gradient(to right, var(--border), var(--accent), var(--border)); z-index:0; }
+  .tl-step{ position:relative; z-index:1; }
+  .tl-num{ width:46px; height:46px; border-radius:50%; background:var(--panel); border:1px solid rgba(79,209,197,0.4); color:var(--accent); font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:16px; display:flex; align-items:center; justify-content:center; margin-bottom:18px; box-shadow:0 0 0 6px var(--bg); }
+  .tl-step h4{ font-size:15px; font-weight:700; color:var(--text); margin-bottom:8px; }
+  .tl-step p{ font-size:13.5px; color:var(--muted); }
+  .tl-time{ display:inline-block; margin-top:10px; font-size:11px; font-weight:600; letter-spacing:0.03em; text-transform:uppercase; color:var(--accent-2); background:var(--accent-2-dim); padding:3px 10px; border-radius:100px; }
+  @media (max-width:900px){
+    .timeline{ grid-template-columns:1fr 1fr; row-gap:32px; }
+    .timeline::before{ display:none; }
+  }
+  @media (max-width:560px){
+    .timeline{ grid-template-columns:1fr; }
+  }
+
+
+  /* ---------- COMPARISON ---------- */
+  .compare-wrap{ display:grid; grid-template-columns:1fr 1fr; border:1px solid var(--border); border-radius:16px; overflow:hidden; }
+  .compare-col{ padding:28px; }
+  .compare-col.old{ background:var(--panel-2); }
+  .compare-col.nova{ background:linear-gradient(180deg, var(--panel), var(--panel-2)); border-left:1px solid var(--border); position:relative; }
+  .compare-col h4{ font-family:'Space Grotesk',sans-serif; font-size:16px; font-weight:700; margin-bottom:18px; display:flex; align-items:center; gap:8px; }
+  .compare-col.old h4{ color:var(--muted); }
+  .compare-col.nova h4{ color:var(--accent); }
+  .compare-row{ display:flex; align-items:flex-start; gap:10px; padding:11px 0; border-top:1px solid var(--border); font-size:13.5px; }
+  .compare-row:first-of-type{ border-top:none; }
+  .compare-col.old .compare-row{ color:var(--muted-2); }
+  .compare-col.nova .compare-row{ color:var(--text); }
+  .compare-row .mk{ flex-shrink:0; width:16px; height:16px; margin-top:1px; }
+  @media (max-width:700px){
+    .compare-wrap{ grid-template-columns:1fr; }
+    .compare-col.nova{ border-left:none; border-top:1px solid var(--border); }
+  }
+
+  /* ---------- TEAM ---------- */
+  
+  .team-card{ background:var(--panel); border:1px solid var(--border); border-radius:16px; padding:28px; text-align:center; }
+  .team-avatar{ width:156px; height:156px; border-radius:50%; margin:0 auto 16px; border:2px solid rgba(79,209,197,0.35); }
+  .team-card h4{ font-size:15.5px; font-weight:700; color:var(--text); }
+  .team-card .team-role{ font-size:12px; color:var(--accent); font-weight:600; margin-top:2px; }
+  .team-card p{ font-size:13px; color:var(--muted); margin-top:12px; }
+  @media (max-width:900px){ .team-grid{ grid-template-columns:1fr; max-width:360px; margin:0 auto; } }
+
+  /* ---------- RISK REVERSAL ---------- */
+  .risk-strip{ display:flex; flex-wrap:wrap; justify-content:center; gap:14px 28px; margin-top:36px; padding:22px 24px; border:1px solid rgba(79,209,197,0.25); background:var(--accent-dim); border-radius:14px; }
+  .risk-item{ display:flex; align-items:center; gap:9px; font-size:13.5px; font-weight:600; color:var(--text); }
+  .risk-item svg{ flex-shrink:0; color:var(--accent); }
+  @media (max-width:560px){ .risk-strip{ justify-content:flex-start; flex-direction:column; gap:12px; } }
+
+  .trust-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:22px; }
+  .trust-card{ background:var(--panel); border:1px solid var(--border); border-radius:16px; padding:26px; }
+  .trust-card .ic{ width:42px; height:42px; border-radius:10px; display:flex; align-items:center; justify-content:center; background:var(--accent-dim); border:1px solid rgba(79,209,197,0.25); margin-bottom:16px; }
+  .trust-card h4{ font-size:15px; font-weight:700; color:var(--text); margin-bottom:8px; }
+  .trust-card p{ font-size:13.5px; color:var(--muted); }
+  .trust-badges{ display:flex; flex-wrap:wrap; justify-content:center; gap:12px; margin-top:32px; }
+  .trust-badge{ display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--muted-2); background:var(--panel-2); border:1px solid var(--border); padding:8px 16px; border-radius:100px; }
+  .trust-badge svg{ flex-shrink:0; color:var(--accent); }
+  @media (max-width:900px){ .trust-grid{ grid-template-columns:1fr 1fr; } }
+  @media (max-width:560px){ .trust-grid{ grid-template-columns:1fr; } .trust-badges{ justify-content:flex-start; } }
+
+
+  .wa-float{ position:fixed; right:20px; bottom:20px; z-index:200; width:56px; height:56px; border-radius:50%; background:#25D366; display:flex; align-items:center; justify-content:center; box-shadow:0 10px 30px -6px rgba(37,211,102,0.55); transition:transform .15s ease, box-shadow .15s ease; }
+  .wa-float:hover{ transform:translateY(-3px) scale(1.05); box-shadow:0 14px 34px -6px rgba(37,211,102,0.65); }
+  .wa-float::before{
+    content:""; width:26px; height:26px; background-color:#06231F;
+    -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.7.8-.8.9-.1.2-.3.2-.6.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5.1-.1.2-.3.4-.4.1-.1.2-.3.2-.4.1-.2 0-.3 0-.5s-.6-1.5-.8-2c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-1 1-1 2.4s1 2.8 1.1 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z'/></svg>") center/contain no-repeat;
+            mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.7.8-.8.9-.1.2-.3.2-.6.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5.1-.1.2-.3.4-.4.1-.1.2-.3.2-.4.1-.2 0-.3 0-.5s-.6-1.5-.8-2c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-1 1-1 2.4s1 2.8 1.1 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z'/></svg>") center/contain no-repeat;
+  }
+  .wa-float .wa-ping{ position:absolute; inset:0; border-radius:50%; background:#25D366; animation:wa-pulse 2.2s ease-out infinite; z-index:-1; }
+  @keyframes wa-pulse{ 0%{ transform:scale(1); opacity:.55; } 100%{ transform:scale(1.9); opacity:0; } }
+  .wa-tooltip{ position:absolute; right:66px; top:50%; transform:translateY(-50%); background:var(--panel); border:1px solid var(--border); color:var(--text); font-size:12.5px; font-weight:600; padding:7px 12px; border-radius:8px; white-space:nowrap; opacity:0; pointer-events:none; transition:opacity .2s ease; box-shadow:0 8px 20px -6px rgba(0,0,0,0.5); }
+  .wa-float:hover .wa-tooltip{ opacity:1; }
+  @media (prefers-reduced-motion: reduce){ .wa-ping{ animation:none; } }
+  @media (max-width:560px){ .wa-float{ right:14px; bottom:14px; width:50px; height:50px; } .wa-float::before{ width:23px; height:23px; } }
+
+
+  /* ---------- THEME TOGGLE ---------- */
+  .nav-icons{ display:flex; align-items:center; gap:8px; flex-shrink:0; }
+  .theme-toggle{ width:38px; height:38px; border-radius:10px; background:var(--panel-2); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; color:var(--accent); cursor:pointer; flex-shrink:0; transition:background .15s ease, transform .15s ease; }
+  .theme-toggle:hover{ transform:translateY(-1px); }
+  .theme-toggle svg{ width:18px; height:18px; }
+
+  /* ---------- MOBILE NAV (no hamburger — links scroll horizontally) ---------- */
+  @media (max-width:900px){
+    .nav-links{
+      justify-content:flex-start;
+      flex-wrap:nowrap; overflow-x:auto; -webkit-overflow-scrolling:touch;
+      gap:20px; scrollbar-width:none; padding:10px 20px 12px;
+    }
+    .nav-links::-webkit-scrollbar{ display:none; }
+    .nav-links a{ white-space:nowrap; flex-shrink:0; }
+  }
+
+  /* ---------- NAV ACTIVE STATE ---------- */
+  .nav-links a.active{ color:var(--accent); }
+
+  /* ---------- SCROLL TO TOP ---------- */
+  .scroll-top{ position:fixed; right:20px; bottom:86px; z-index:200; width:46px; height:46px; border-radius:50%; background:var(--panel); border:1px solid var(--border); color:var(--accent); display:flex; align-items:center; justify-content:center; box-shadow:0 10px 24px -8px rgba(0,0,0,0.45); opacity:0; transform:translateY(8px); pointer-events:none; transition:opacity .25s ease, transform .2s ease; }
+  .scroll-top.show{ opacity:1; transform:translateY(0); pointer-events:auto; }
+  .scroll-top:hover{ transform:translateY(-3px); }
+  @media (max-width:560px){ .scroll-top{ right:14px; bottom:72px; width:42px; height:42px; } }
+
+
   .reveal{ opacity:0; transform:translateY(22px); transition:opacity .6s ease, transform .6s ease; }
   .reveal.in{ opacity:1; transform:translateY(0); }
   .reveal.stagger.in{ transition-delay:calc(var(--d, 0) * 70ms); }
@@ -279,7 +425,7 @@
   .testi-strip{ background:var(--bg-soft); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
   .logo-row{ display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:28px; padding:36px 0; opacity:.6; }
   .logo-row span{ font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:15px; color:var(--muted); letter-spacing:0.02em; }
-  .testi-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+  .testi-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:22px; }
   .testi-card{ background:var(--panel); border:1px solid var(--border); border-radius:16px; padding:26px; display:flex; flex-direction:column; gap:16px; }
   .testi-stars{ color:var(--amber); font-size:13px; letter-spacing:2px; }
   .testi-card p{ font-size:14.5px; color:var(--text); flex-grow:1; }
@@ -314,8 +460,10 @@
     .module-grid{ grid-template-columns:repeat(2,1fr); }
     .local-fit{ grid-template-columns:1fr; }
     .contact-grid{ grid-template-columns:1fr; }
-    .nav-links{ display:none; }
     .testi-grid{ grid-template-columns:1fr; }
+    .price-grid{ grid-template-columns:1fr; }
+    section{ padding:48px 0; }
+    .section-head{ margin-bottom:28px; }
   }
   @media (max-width: 560px){
     .wrap{ padding:0 20px; }
@@ -323,10 +471,11 @@
     .nav-sub{ padding:2px 20px 12px; }
     .module-grid{ grid-template-columns:1fr 1fr; }
     .cta-band{ padding:34px 24px; }
+    section{ padding:40px 0; }
   }
 </style>
 </head>
-<body>
+<body class="light-mode">
 
 <header>
   <nav>
@@ -336,19 +485,26 @@
         <span class="name">TransApple Technologies</span>
       </div>
     </div>
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#why-us">Why Us</a>
-      <a href="#products">Products</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contact">Contact</a>
+    <div class="nav-icons">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to night mode">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
+      </button>
     </div>
   </nav>
   <div class="nav-sub">
     <span class="tag">Smart School Solutions</span>
     <a class="nav-cta" href="#demo">Book a Free Demo</a>
+  </div>
+  <div class="nav-links" id="navLinks">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#why-us">Why Us</a>
+    <a href="#products">Products</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact</a>
   </div>
 </header>
 
@@ -430,6 +586,27 @@
   </div>
 </section>
 
+<!-- ============ TEAM ============ -->
+<!-- NOTE: Replace names, roles, photos and bios below with your real team before publishing. -->
+<section id="team">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">Meet the Team</span>
+      <h2>The people behind Nova School.</h2>
+      <p>A small team based in Kiryandongo, building tools for schools we care about.</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card reveal stagger" style="--d:0">
+        <img class="team-avatar" src="https://i.postimg.cc/9MR3QTFD/file-00000000264c81f483329fb9310ac02f.png" alt="Founder & CEO">
+        <h4>Okello David</h4>
+        <div class="team-role">Founder &amp; CEO</div>
+        <p>The Founder and Software Developer of TransApple Technologies, committed to building innovative, secure, and affordable digital solutions that empower schools through technology.</p>
+      </div>
+     
+    </div>
+  </div>
+</section>
+
 <!-- ============ 3. OUR SERVICES ============ -->
 <section id="services">
   <div class="wrap">
@@ -494,11 +671,84 @@
   </div>
 </div>
 
+<!-- ============ COMPARISON ============ -->
+<section id="compare">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">The Difference</span>
+      <h2>See what changes when you switch.</h2>
+      <p>No more digging through files. No more guesswork. Just fast, accurate, stress-free school administration.</p>
+    </div>
+    <div class="compare-wrap reveal">
+      <div class="compare-col old">
+        <h4>😓 The Old Way</h4>
+        <div class="compare-row"><svg class="mk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg><span>Searching for one student's file can take a day, sometimes a whole week</span></div>
+        <div class="compare-row"><svg class="mk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg><span>Printing report cards means hours at the photocopier, one by one</span></div>
+        <div class="compare-row"><svg class="mk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg><span>Fee tracking on paper or scattered spreadsheets</span></div>
+        <div class="compare-row"><svg class="mk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg><span>Manual entry means room for tiring, costly mistakes</span></div>
+        <div class="compare-row"><svg class="mk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg><span>Attendance registers that can be lost or damaged</span></div>
+        <div class="compare-row"><svg class="mk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg><span>Parents call the office again and again to ask about balances</span></div>
+        <div class="compare-row"><svg class="mk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg><span>Records at risk from fire, theft, or simple wear and tear</span></div>
+      </div>
+      <div class="compare-col nova">
+        <h4>✨ With Nova School</h4>
+        <div class="compare-row"><svg class="mk" viewBox="0 0 24 24" fill="none" stroke="#4FD1C5" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Type a name, and there they are — in seconds, every single time</span></div>
+        <div class="compare-row"><svg class="mk" viewBox="0 0 24 24" fill="none" stroke="#4FD1C5" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Print report cards for a whole class, or the whole school, with one click</span></div>
+        <div class="compare-row"><svg class="mk" viewBox="0 0 24 24" fill="none" stroke="#4FD1C5" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Fees tracked automatically, one clean system of record</span></div>
+        <div class="compare-row"><svg class="mk" viewBox="0 0 24 24" fill="none" stroke="#4FD1C5" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Nova does the calculations, so results come out right — no mistakes</span></div>
+        <div class="compare-row"><svg class="mk" viewBox="0 0 24 24" fill="none" stroke="#4FD1C5" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Attendance marked digitally, backed up automatically</span></div>
+        <div class="compare-row"><svg class="mk" viewBox="0 0 24 24" fill="none" stroke="#4FD1C5" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Parents check balances themselves — calm office, happy parents</span></div>
+        <div class="compare-row"><svg class="mk" viewBox="0 0 24 24" fill="none" stroke="#4FD1C5" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Records encrypted and backed up safely in the cloud, always</span></div>
+      </div>
+    </div>
+    <p style="text-align:center; margin-top:22px; color:var(--muted); font-size:14px;">No stress, no tiresome paperwork — just smooth, easy school administration, every step of the way.</p>
+  </div>
+</section>
+
+<!-- ============ TRUST & SECURITY ============ -->
+<section id="trust">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow"><span class="dot"></span>Trust &amp; Security</span>
+      <h2>Student data deserves serious protection.</h2>
+      <p>We know schools are trusting us with sensitive records. Here's how we take that responsibility seriously.</p>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-card reveal stagger" style="--d:0">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4FD1C5" stroke-width="1.8"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
+        <h4>Encrypted by Default</h4>
+        <p>Data is encrypted in transit and at rest, so records stay unreadable to anyone without authorised access.</p>
+      </div>
+      <div class="trust-card reveal stagger" style="--d:1">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7C9CFF" stroke-width="1.8"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 12l4-2M3 12l4 2"/><path d="M12 7v5l3 3"/></svg></div>
+        <h4>Automatic Backups</h4>
+        <p>School records are backed up continuously, so a lost device or power cut never means lost data.</p>
+      </div>
+      <div class="trust-card reveal stagger" style="--d:2">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F2B138" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/><path d="M17 8l1.5 1.5L21 7"/></svg></div>
+        <h4>Role-Based Access</h4>
+        <p>Staff only see what their role permits — a bursar can't edit exam results, and vice versa.</p>
+      </div>
+      <div class="trust-card reveal stagger" style="--d:3">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4FD1C5" stroke-width="1.8"><path d="M12 3l7 4v5c0 4.5-3 8-7 9-4-1-7-4.5-7-9V7z"/></svg></div>
+        <h4>You Own Your Data</h4>
+        <p>Your school's records belong to your school. We never sell data, and you can request a full export anytime.</p>
+      </div>
+    </div>
+    <div class="trust-badges">
+      <span class="trust-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Cloud infrastructure with 99.9% uptime target</span>
+      <span class="trust-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Daily automated backups</span>
+      <span class="trust-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>No third-party data sales</span>
+      <span class="trust-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Support in under 24 hours</span>
+    </div>
+  </div>
+</section>
+
 <!-- ============ TESTIMONIALS ============ -->
 <div class="testi-strip">
   <div class="wrap">
     <div class="logo-row reveal">
-      <span>Kampala Hill Academy</span>
+      <span>Markland Hill Academy</span>
       <span>St. Aloysius College</span>
       <span>Nile View Primary</span>
       <span>Greenwood High</span>
@@ -518,24 +768,32 @@
         <div class="testi-stars">★★★★★</div>
         <p>"Fee tracking used to take our bursar a full day each term. With Nova School it's done before lunch, and parents can see balances without calling the office."</p>
         <div class="testi-person">
-          <img class="testi-avatar" src="https://ui-avatars.com/api/?name=H+M&background=4FD1C5&color=06231F&bold=true" alt="Head Teacher" width="38" height="38">
-          <div><div class="who">Head Teacher</div><div class="role">Secondary school, Kampala</div></div>
+          <img class="testi-avatar" src="https://ui-avatars.com/api/?name=K+H&background=4FD1C5&color=06231F&bold=true" alt="Head Teacher, Markland Hill Academy" width="38" height="38">
+          <div><div class="who">Head Teacher</div><div class="role">Markland Hill Academy</div></div>
         </div>
       </div>
       <div class="testi-card reveal stagger" style="--d:1">
         <div class="testi-stars">★★★★★</div>
         <p>"Report cards went from a two-week scramble to a same-day export. The exam module handles our grading scale exactly the way we teach it."</p>
         <div class="testi-person">
-          <img class="testi-avatar" src="https://ui-avatars.com/api/?name=D+S&background=7C9CFF&color=06231F&bold=true" alt="Deputy Head, Studies" width="38" height="38">
-          <div><div class="who">Deputy Head, Studies</div><div class="role">Primary school, Wakiso</div></div>
+          <img class="testi-avatar" src="https://ui-avatars.com/api/?name=N+V&background=7C9CFF&color=06231F&bold=true" alt="Deputy Head, Studies, Nile View Primary" width="38" height="38">
+          <div><div class="who">Deputy Head, Studies</div><div class="role">Nile View Primary</div></div>
         </div>
       </div>
       <div class="testi-card reveal stagger" style="--d:2">
         <div class="testi-stars">★★★★★</div>
         <p>"Our front office staff aren't especially technical, and they picked it up in a day. Support answers fast whenever we get stuck."</p>
         <div class="testi-person">
-          <img class="testi-avatar" src="https://ui-avatars.com/api/?name=B+R&background=F2B138&color=2B1D04&bold=true" alt="Bursar" width="38" height="38">
-          <div><div class="who">Bursar</div><div class="role">Boarding school, Mukono</div></div>
+          <img class="testi-avatar" src="https://ui-avatars.com/api/?name=S+A&background=F2B138&color=2B1D04&bold=true" alt="Bursar, St. Aloysius College" width="38" height="38">
+          <div><div class="who">Bursar</div><div class="role">St. Aloysius College</div></div>
+        </div>
+      </div>
+      <div class="testi-card reveal stagger" style="--d:3">
+        <div class="testi-stars">★★★★★</div>
+        <p>"Switching systems mid-year worried us, but the migration and training were handled for us. We were live within two weeks and haven't looked back."</p>
+        <div class="testi-person">
+          <img class="testi-avatar" src="https://ui-avatars.com/api/?name=G+H&background=4FD1C5&color=06231F&bold=true" alt="School Director, Greenwood High" width="38" height="38">
+          <div><div class="who">School Director</div><div class="role">Greenwood High</div></div>
         </div>
       </div>
     </div>
@@ -595,6 +853,92 @@
   </div>
 </section>
 
+<!-- ============ GALLERY ============ -->
+<section id="gallery">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow"><span class="dot"></span>Gallery</span>
+      <h2>Life inside schools running on Nova.</h2>
+      <p>A look at classrooms, campuses, and everyday moments from the schools we work with.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item big reveal stagger" style="--d:0">
+        <img src="https://i.postimg.cc/JzgP4Xfs/126315358-gettyimages-598261008.jpg" alt="Students in a digital classroom" loading="lazy">
+        <div class="gallery-cap"><div class="g-title">Digital Classrooms</div><div class="g-sub">Technology-driven learning</div></div>
+      </div>
+      <div class="gallery-item reveal stagger" style="--d:1">
+        <img src="https://i.postimg.cc/BnyMQFr8/Administrative-Assistant-Jobs.jpg" alt="Students during an exam" loading="lazy">
+        <div class="gallery-cap"><div class="g-title">Exam Season</div><div class="g-sub">Managed end-to-end</div></div>
+      </div>
+      <div class="gallery-item reveal stagger" style="--d:2">
+        <img src="https://i.postimg.cc/HkKBsMq9/best-school-management-systems-for-private-schools-in-zambia-768x768.png" alt="School library" loading="lazy">
+        <div class="gallery-cap"><div class="g-title">Library Hours</div><div class="g-sub">Quiet corners for study</div></div>
+      </div>
+      <div class="gallery-item reveal stagger" style="--d:3">
+        <img src="https://i.postimg.cc/W1KXbZBJ/images.jpg" alt="Students at a sports event" loading="lazy">
+        <div class="gallery-cap"><div class="g-title">Sports Day</div><div class="g-sub">Beyond the classroom</div></div>
+      </div>
+      <div class="gallery-item reveal stagger" style="--d:4">
+        <img src="https://i.postimg.cc/x17tTmwN/images-(1).jpg" alt="Teachers collaborating in the staffroom" loading="lazy">
+        <div class="gallery-cap"><div class="g-title">Staffroom</div><div class="g-sub">Teachers, connected</div></div>
+      </div>
+      <div class="gallery-item big reveal stagger" style="--d:5">
+        <img src="https://i.postimg.cc/CxtmL83B/images-(2).jpg" alt="School campus grounds" loading="lazy">
+        <div class="gallery-cap"><div class="g-title">Campus Life</div><div class="g-sub">Every corner of the school day</div></div>
+      </div>
+      <div class="gallery-item reveal stagger" style="--d:6">
+        <img src="https://i.postimg.cc/y8WLHjbm/images-(3).jpg" alt="Students in a science lab" loading="lazy">
+        <div class="gallery-cap"><div class="g-title">Science Lab</div><div class="g-sub">Hands-on learning</div></div>
+      </div>
+      <div class="gallery-item reveal stagger" style="--d:7">
+        <img src="https://i.postimg.cc/XYXsbLzw/professional-office-worker-stockcake.jpg" alt="Graduation ceremony" loading="lazy">
+        <div class="gallery-cap"><div class="g-title">Graduation Day</div><div class="g-sub">Milestones, celebrated</div></div>
+      </div>
+      <div class="gallery-item reveal stagger" style="--d:8">
+        <img src="https://i.postimg.cc/8z3tPv2b/school-management-preview-Dub8WAh-Q.png" alt="School management system preview" loading="lazy">
+        <div class="gallery-cap"><div class="g-title">Nova Dashboard</div><div class="g-sub">School management, simplified</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ONBOARDING ============ -->
+<section id="onboarding">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow"><span class="dot"></span>How It Works</span>
+      <h2>From first call to fully live, in weeks.</h2>
+      <p>Switching systems can feel daunting — here's exactly what the process with us looks like.</p>
+    </div>
+    <div class="timeline">
+      <div class="tl-step reveal stagger" style="--d:0">
+        <div class="tl-num">1</div>
+        <h4>Setup Call</h4>
+        <p>We learn how your school runs today — your terms, fee structure, and grading system.</p>
+        <span class="tl-time">Day 1</span>
+      </div>
+      <div class="tl-step reveal stagger" style="--d:1">
+        <div class="tl-num">2</div>
+        <h4>Data Migration</h4>
+        <p>We help move your existing student, staff, and fee records into Nova School securely.</p>
+        <span class="tl-time">Week 1</span>
+      </div>
+      <div class="tl-step reveal stagger" style="--d:2">
+        <div class="tl-num">3</div>
+        <h4>Staff Training</h4>
+        <p>Hands-on training for your front office and teaching staff — no technical background needed.</p>
+        <span class="tl-time">Week 2</span>
+      </div>
+      <div class="tl-step reveal stagger" style="--d:3">
+        <div class="tl-num">4</div>
+        <h4>Go Live</h4>
+        <p>Your school runs on Nova, with our support team on hand whenever you need help.</p>
+        <span class="tl-time">Ongoing</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ PRICING ============ -->
 <section id="pricing">
   <div class="wrap">
@@ -644,6 +988,12 @@
       </div>
     </div>
     <p class="price-note">Pricing depends on school size, number of students, and modules selected. Contact us for an exact quote — no hidden fees.</p>
+    <div class="risk-strip reveal">
+      <span class="risk-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Free onboarding &amp; data migration</span>
+      <span class="risk-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Pay per term — no long-term contracts</span>
+      <span class="risk-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Dedicated support from day one</span>
+      <span class="risk-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Your data, exportable anytime</span>
+    </div>
   </div>
 </section>
 
@@ -698,17 +1048,17 @@
           <div class="ic whatsapp-ic"></div>
           <div><div class="label">WhatsApp</div><div class="value">0745 685 868</div></div>
         </a>
-        <a class="contact-row" href="mailto:hello@transappletechnologies.com">
+        <a class="contact-row" href="mailto:transappletech@gmail.com">
           <div class="ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 6 10-6"/></svg></div>
-          <div><div class="label">Email</div><div class="value">hello@transappletechnologies.com</div></div>
+          <div><div class="label">Email</div><div class="value">transappletech@gmail.com</div></div>
         </a>
         <a class="contact-row" href="https://facebook.com/transappletechnologies" target="_blank" rel="noopener">
           <div class="ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M15 8.5h-1.5A2 2 0 0 0 11.5 10.5V12H10v2.2h1.5V21h2.4v-6.8H15.6L16 12h-2.1v-1.2c0-.4.2-.7.8-.7H16V8.5z"/></svg></div>
           <div><div class="label">Facebook</div><div class="value">TransApple Technologies</div></div>
         </a>
-        <a class="contact-row" href="https://maps.google.com/?q=Kampala,Uganda" target="_blank" rel="noopener">
+        <a class="contact-row" href="https://maps.google.com/?q=Kiryandongo,Uganda" target="_blank" rel="noopener">
           <div class="ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 10c0 5.5-8 12-8 12s-8-6.5-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-          <div><div class="label">Office</div><div class="value">Kampala, Uganda</div></div>
+          <div><div class="label">Location</div><div class="value">Kiryandongo, Uganda</div></div>
         </a>
       </div>
       <form class="contact-form" id="contactForm">
@@ -747,19 +1097,22 @@
         <div class="foot-social">
           <a href="https://facebook.com/transappletechnologies" target="_blank" rel="noopener" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M15 8.5h-1.5A2 2 0 0 0 11.5 10.5V12H10v2.2h1.5V21h2.4v-6.8H15.6L16 12h-2.1v-1.2c0-.4.2-.7.8-.7H16V8.5z"/></svg></a>
           <a href="https://wa.me/256745685868" target="_blank" rel="noopener" aria-label="WhatsApp"><span class="ic whatsapp-ic" style="width:16px; height:16px;"></span></a>
-          <a href="mailto:hello@transappletechnologies.com" aria-label="Email"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 6 10-6"/></svg></a>
+          <a href="mailto:transappletech@gmail.com" aria-label="Email"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 6 10-6"/></svg></a>
         </div>
       </div>
       <div class="foot-cols">
         <div class="foot-col">
           <h5>Company</h5>
           <a href="#about">About Us</a>
+          <a href="#team">Team</a>
           <a href="#services">Our Services</a>
           <a href="#why-us">Why Choose Us</a>
+          <a href="#trust">Trust &amp; Security</a>
         </div>
         <div class="foot-col">
           <h5>Get Started</h5>
           <a href="#products">Products</a>
+          <a href="#gallery">Gallery</a>
           <a href="#pricing">Pricing</a>
           <a href="#faq">FAQ</a>
           <a href="#contact">Contact</a>
@@ -773,7 +1126,7 @@
     </div>
     <div class="foot-bottom">
       <span>© 2026 TransApple Technologies. All rights reserved.</span>
-      <span>Kampala, Uganda</span>
+      <span>Kiryandongo, Uganda</span>
     </div>
   </div>
 </footer>
@@ -785,7 +1138,7 @@
     <div class="section-head">
       <span class="eyebrow">Privacy Policy</span>
       <h2 id="privacy-title" style="font-size:22px;">How we handle your data.</h2>
-      <p>TransApple Technologies collects only the information needed to provide our services — such as student, staff, and school records entered into Nova School — and contact details submitted through this website. We do not sell your data to third parties. Data is stored on secure cloud infrastructure and is only accessible to authorised school staff and TransApple support personnel. You can request access to, correction of, or deletion of your school's data at any time by contacting us at hello@transappletechnologies.com.</p>
+      <p>TransApple Technologies collects only the information needed to provide our services — such as student, staff, and school records entered into Nova School — and contact details submitted through this website. We do not sell your data to third parties. Data is stored on secure cloud infrastructure and is only accessible to authorised school staff and TransApple support personnel. You can request access to, correction of, or deletion of your school's data at any time by contacting us at transappletech@gmail.com.</p>
     </div>
   </div>
 </div>
@@ -800,7 +1153,56 @@
   </div>
 </div>
 
+<a class="wa-float" href="https://wa.me/256745685868?text=Hi%20TransApple%2C%20I%27d%20like%20to%20know%20more%20about%20Nova%20School" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+  <span class="wa-ping" aria-hidden="true"></span>
+  <span class="wa-tooltip">Chat with us</span>
+</a>
+
+<button class="scroll-top" id="scrollTop" type="button" aria-label="Scroll to top">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
 <script>
+  // Theme toggle (day / night mode) — in-memory only, defaults to day mode
+  const themeToggle = document.getElementById('themeToggle');
+  const sunIcon = themeToggle.querySelector('.icon-sun');
+  const moonIcon = themeToggle.querySelector('.icon-moon');
+  themeToggle.addEventListener('click', () => {
+    const isLight = document.body.classList.toggle('light-mode');
+    sunIcon.style.display = isLight ? 'none' : 'block';
+    moonIcon.style.display = isLight ? 'block' : 'none';
+    themeToggle.setAttribute('aria-label', isLight ? 'Switch to night mode' : 'Switch to day mode');
+  });
+
+  // Scroll to top button
+  const scrollTopBtn = document.getElementById('scrollTop');
+  window.addEventListener('scroll', () => {
+    scrollTopBtn.classList.toggle('show', window.scrollY > 480);
+  });
+  scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // Nav scrollspy — highlights the current section's link as you scroll
+  const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+  const spySections = Array.from(navLinks)
+    .map(a => document.querySelector(a.getAttribute('href')))
+    .filter(Boolean);
+  if ('IntersectionObserver' in window && spySections.length) {
+    const spyIo = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const id = '#' + entry.target.id;
+        const link = document.querySelector(`.nav-links a[href="${id}"]`);
+        if (!link) return;
+        if (entry.isIntersecting) {
+          navLinks.forEach(a => a.classList.remove('active'));
+          link.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+    spySections.forEach(sec => spyIo.observe(sec));
+  }
+
   // Scroll reveal
   const revealEls = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window) {
@@ -866,7 +1268,7 @@
       );
       const status = document.getElementById('formStatus');
       if (status) status.style.display = 'block';
-      window.location.href = `mailto:hello@transappletechnologies.com?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:transappletech@gmail.com?subject=${subject}&body=${body}`;
     });
   }
 
