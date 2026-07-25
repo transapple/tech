@@ -1128,8 +1128,44 @@
       <span>© 2026 TransApple Technologies. All rights reserved.</span>
       <span>Kiryandongo, Uganda</span>
     </div>
+    <div style="text-align:center; margin-top:6px;">
+      <span id="visitCounter" style="font-size:6px; color:var(--muted); letter-spacing:.02em;">Visits: —</span>
+    </div>
   </div>
 </footer>
+
+<script>
+(function () {
+  var el = document.getElementById('visitCounter');
+  if (!el) return;
+  var key = 'transapple_technologies_site'; // unique counter key — change if you want to reset
+  var apiUrl = 'https://countapi.mileshilliard.com/api/v1/hit/' + key;
+
+  function showLocalFallback() {
+    try {
+      var n = parseInt(localStorage.getItem('siteVisitCount') || '0', 10) + 1;
+      localStorage.setItem('siteVisitCount', String(n));
+      el.textContent = 'Visits: ' + n.toLocaleString();
+    } catch (e) {
+      el.textContent = 'Visits: —';
+    }
+  }
+
+  fetch(apiUrl)
+    .then(function (res) {
+      if (!res.ok) throw new Error('bad response');
+      return res.json();
+    })
+    .then(function (data) {
+      if (data && data.value !== undefined) {
+        el.textContent = 'Visits: ' + Number(data.value).toLocaleString();
+      } else {
+        showLocalFallback();
+      }
+    })
+    .catch(showLocalFallback);
+})();
+</script>
 
 <!-- ============ LEGAL (POPUP MODALS) ============ -->
 <div class="modal-overlay" id="modal-privacy" aria-hidden="true">
